@@ -37,6 +37,7 @@ with open('output.csv', 'rt') as f:
 	for i in reader:
 		if any(ipaddress.IPv4Address(i[0]) in x for x in ranges):
 			print(i[0])
+
 			
 			
 

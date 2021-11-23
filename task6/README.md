@@ -1,3 +1,6 @@
 # Task 6
+1. tar -xf the layers
 
-Use https://github.com/NixOS/patchelf
+
+
+3. Use https://github.com/NixOS/patchelf

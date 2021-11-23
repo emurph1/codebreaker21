@@ -1,1 +1,21 @@
 # task 5
+1. look at the manifest.json to find "maintainer" email (use "cat manifest.json | jq")
+	
+    a. jq is a nice thing to show json in pretty format (can pipe output to a new json)
+
+2. tar -xf all the layer.tar files in each folder
+	
+    a. rg 'git clone' and look for the git clone url that is connected to a sus file "build_test.sh"
+
+3. so most malicious files are binaries, so you are probably gonna be looking in "bin" directories
+	
+    a. after searching around the different directories, you find the 8e... folder because it has a lot of folders
+
+	b. you check out bin from the main directory, but find nothing in there
+	
+    c. since you didn't find anything, you look into usr/bin
+	
+    	1. interesting, you find a lot of files
+		
+        2. since you know malicious files/payloads are usually pretty big, you do "ls -lh" to see the file size and notice
+		that the "make" file is 8.4M so that's probs the malicious file -> path is usr/bin/make
