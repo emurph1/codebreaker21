@@ -1,0 +1,32 @@
+Figure this bullshit out....
+
+1. Start it up in Ghidra and find the main function (start at the top and work way down)
+
+2. slowly look thru each of the functions
+    a. gitGrabber() is the only one that really gets called in main
+    b. within gitGrabber(), see line 29 and notice that the function opens a file (which is "/tmp/.gglock" when you call the function in GDB)
+    c. looking at ospoimcwliqai function because it has uuid in it
+    
+
+    
+OSPOIMCWLIQAI FUNCTION: takes in ip, 0x1a0a, output_00, and length
+- looks to have most of information to establish a connection (username, version, os, timestamp (tv), messages, ciphertexts, my_uuid, fp, session_key, etc.)
+
+
+Functions that I have looked at:
+- gglockFileOpen
+- ffsdzyanszqsw -> populates iVar1 (int)
+- cxdtfmtpxijil -> takes in a stringstream and does git things (git_repository_open, git_revwalk, git_commit_lookup)
+- ospoimcwliqai (note above)
+- elcftaqudeovx -> takes in a ptr (used with &my_uuid) and size_t length -> memory allocator
+- xajwbxqxoqasb -> sending stuff to the socket
+- coxclamjiqjlw -> does something with magic start and magic end with the uuid
+- pnsikqtljaxba -> another allocator
+- orognarksdsdu -> allocator 
+- jlnfxxpeavbex (vector) -> adding things to messages?
+    - calls dbmndchjjvtfb which goes into a file?
+- cesrjuratcsul -> setting magic_start, magic_end, cmd_param/length/data -> i think it is assigning info to them?
+- 
+
+
+The htons() function makes sure that numbers are stored in memory in network byte order, which is with the most significant byte first.

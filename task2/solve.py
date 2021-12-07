@@ -16,6 +16,7 @@ with open(json_file) as f:
 # parsing through the json data for LogonId
 logins = {}
 for i in range(len(data)):
+    # print(data[i]['PayloadData3'])
     login_id = data[i]['PayloadData3'].replace("LogonId: ", "")
     if login_id not in logins:
         logins[login_id] = []
