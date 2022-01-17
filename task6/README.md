@@ -1,4 +1,7 @@
 # Task 6
+Now that we've found a malicious artifact, the next step is to understand what it's doing. Identify some characteristics of the communications between the malicious artifact and the LP.
+
+## Solution
 1. Open up the good ol ghidra with the file found from Task 5 (the make file)
 
     a. Make your way to the main function -> see gitGrabber() function and look into it
